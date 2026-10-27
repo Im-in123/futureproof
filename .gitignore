@@ -1,0 +1,19 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.log
+receipts/*.json
+!receipts/.gitkeep
+fixtures/cache/
+fixtures/reasoning_cache/
+fixtures/extraction_cache/
+receipts/archive/
+node_modules/
+
+# Build artifacts (regenerable)
+frontend/dist/
+*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts

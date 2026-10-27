@@ -1,0 +1,253 @@
+{
+  "run_at": "2026-10-26T21:36:28.176527Z",
+  "raw": {
+    "total": 12,
+    "passed": 10,
+    "accuracy": 0.833
+  },
+  "product": {
+    "total": 10,
+    "passed": 10,
+    "accuracy": 1.0
+  },
+  "by_category": {
+    "safe": {
+      "total": 4,
+      "passed": 4,
+      "product_total": 4,
+      "product_passed": 4
+    },
+    "edge": {
+      "total": 2,
+      "passed": 2,
+      "product_total": 2,
+      "product_passed": 2
+    },
+    "predatory": {
+      "total": 5,
+      "passed": 4,
+      "product_total": 4,
+      "product_passed": 4
+    },
+    "unknown": {
+      "total": 1,
+      "passed": 0,
+      "product_total": 0,
+      "product_passed": 0
+    }
+  },
+  "failures": [
+    {
+      "name": "or_pred_12",
+      "category": "predatory",
+      "jurisdiction": "Oregon",
+      "rate": 12.0,
+      "expected": "REMOVE",
+      "actual": "ERROR",
+      "actual_verdict": null,
+      "reason": "",
+      "passed": false,
+      "failure_kind": "INFRA",
+      "error": "APIConnectionError: Connection error.",
+      "elapsed_s": 6053.3,
+      "note": "12% exceeds OR cap of 10%"
+    },
+    {
+      "name": "wy_no_cap",
+      "category": "unknown",
+      "jurisdiction": "Wyoming",
+      "rate": 15.0,
+      "expected": "NO_EVIDENCE",
+      "actual": "ERROR",
+      "actual_verdict": null,
+      "reason": "",
+      "passed": false,
+      "failure_kind": "INFRA",
+      "error": "APIConnectionError: Connection error.",
+      "elapsed_s": 13.1,
+      "note": "WY has no known cap \u2014 system should refuse to guess"
+    }
+  ],
+  "results": [
+    {
+      "name": "ca_safe_3",
+      "category": "safe",
+      "jurisdiction": "California",
+      "rate": 3.0,
+      "expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "actual_verdict": "VERIFIED",
+      "reason": "all event rules passed",
+      "passed": true,
+      "failure_kind": null,
+      "error": null,
+      "elapsed_s": 131.0,
+      "note": "3% is well under CA cap"
+    },
+    {
+      "name": "ca_safe_8",
+      "category": "safe",
+      "jurisdiction": "California",
+      "rate": 8.0,
+      "expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "actual_verdict": "VERIFIED",
+      "reason": "all event rules passed",
+      "passed": true,
+      "failure_kind": null,
+      "error": null,
+      "elapsed_s": 434.1,
+      "note": "8% is under CA cap"
+    },
+    {
+      "name": "ca_edge_10",
+      "category": "edge",
+      "jurisdiction": "California",
+      "rate": 10.0,
+      "expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "actual_verdict": "VERIFIED",
+      "reason": "all event rules passed",
+      "passed": true,
+      "failure_kind": null,
+      "error": null,
+      "elapsed_s": 204.9,
+      "note": "10% is exactly at CA cap"
+    },
+    {
+      "name": "ca_pred_10_5",
+      "category": "predatory",
+      "jurisdiction": "California",
+      "rate": 10.5,
+      "expected": "REMOVE",
+      "actual": "REMOVE",
+      "actual_verdict": "VERIFIED",
+      "reason": "clause rate 10.50% exceeds verified legal max 10.00%",
+      "passed": true,
+      "failure_kind": null,
+      "error": null,
+      "elapsed_s": 207.8,
+      "note": "10.5% exceeds CA cap by 0.5"
+    },
+    {
+      "name": "ca_pred_18",
+      "category": "predatory",
+      "jurisdiction": "California",
+      "rate": 18.0,
+      "expected": "REMOVE",
+      "actual": "REMOVE",
+      "actual_verdict": "VERIFIED",
+      "reason": "clause rate 18.00% exceeds verified legal max 10.00%",
+      "passed": true,
+      "failure_kind": null,
+      "error": null,
+      "elapsed_s": 108.9,
+      "note": "18% is nearly double CA cap"
+    },
+    {
+      "name": "ca_pred_25",
+      "category": "predatory",
+      "jurisdiction": "California",
+      "rate": 25.0,
+      "expected": "REMOVE",
+      "actual": "REMOVE",
+      "actual_verdict": "VERIFIED",
+      "reason": "clause rate 25.00% exceeds verified legal max 10.00%",
+      "passed": true,
+      "failure_kind": null,
+      "error": null,
+      "elapsed_s": 157.1,
+      "note": "25% is egregiously over CA cap"
+    },
+    {
+      "name": "ny_safe_4",
+      "category": "safe",
+      "jurisdiction": "New York",
+      "rate": 4.0,
+      "expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "actual_verdict": "VERIFIED",
+      "reason": "all event rules passed",
+      "passed": true,
+      "failure_kind": null,
+      "error": null,
+      "elapsed_s": 94.5,
+      "note": "4% is under NY cap of 5%"
+    },
+    {
+      "name": "ny_edge_5",
+      "category": "edge",
+      "jurisdiction": "New York",
+      "rate": 5.0,
+      "expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "actual_verdict": "VERIFIED",
+      "reason": "all event rules passed",
+      "passed": true,
+      "failure_kind": null,
+      "error": null,
+      "elapsed_s": 132.9,
+      "note": "5% is exactly at NY cap"
+    },
+    {
+      "name": "ny_pred_7",
+      "category": "predatory",
+      "jurisdiction": "New York",
+      "rate": 7.0,
+      "expected": "REMOVE",
+      "actual": "REMOVE",
+      "actual_verdict": "VERIFIED",
+      "reason": "clause rate 7.00% exceeds verified legal max 5.00%",
+      "passed": true,
+      "failure_kind": null,
+      "error": null,
+      "elapsed_s": 221.3,
+      "note": "7% exceeds NY cap of 5%"
+    },
+    {
+      "name": "or_safe_9",
+      "category": "safe",
+      "jurisdiction": "Oregon",
+      "rate": 9.0,
+      "expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "actual_verdict": "VERIFIED",
+      "reason": "all event rules passed",
+      "passed": true,
+      "failure_kind": null,
+      "error": null,
+      "elapsed_s": 197.5,
+      "note": "9% is under OR cap"
+    },
+    {
+      "name": "or_pred_12",
+      "category": "predatory",
+      "jurisdiction": "Oregon",
+      "rate": 12.0,
+      "expected": "REMOVE",
+      "actual": "ERROR",
+      "actual_verdict": null,
+      "reason": "",
+      "passed": false,
+      "failure_kind": "INFRA",
+      "error": "APIConnectionError: Connection error.",
+      "elapsed_s": 6053.3,
+      "note": "12% exceeds OR cap of 10%"
+    },
+    {
+      "name": "wy_no_cap",
+      "category": "unknown",
+      "jurisdiction": "Wyoming",
+      "rate": 15.0,
+      "expected": "NO_EVIDENCE",
+      "actual": "ERROR",
+      "actual_verdict": null,
+      "reason": "",
+      "passed": false,
+      "failure_kind": "INFRA",
+      "error": "APIConnectionError: Connection error.",
+      "elapsed_s": 13.1,
+      "note": "WY has no known cap \u2014 system should refuse to guess"
+    }
+  ]
+}
